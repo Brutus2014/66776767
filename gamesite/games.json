@@ -1,0 +1,18 @@
+[
+  {
+    "id": "target-tap",
+    "title": "Target Tap",
+    "category": "Arcade",
+    "color": "#e8473f",
+    "description": "Tap the targets before they disappear. A sample game that ships with the site.",
+    "iframe": "<iframe src=\"games/target-tap/index.html\" allowfullscreen loading=\"lazy\"></iframe>"
+  },
+  {
+    "id": "your-game-here",
+    "title": "Your Game Here",
+    "category": "Puzzle",
+    "color": "#2a9d8f",
+    "description": "Replace the src with a link to a game you have permission to embed.",
+    "iframe": "<iframe src=\"https://example.com/your-game/\" allowfullscreen loading=\"lazy\"></iframe>"
+  }
+]
