@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Shelf</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="#" id="logo">Game Shelf</a>
+    <input id="search" type="search" placeholder="Search games" aria-label="Search games">
+  </header>
+
+  <main>
+    <section id="browse">
+      <div id="filters" class="filters" role="tablist" aria-label="Categories"></div>
+      <div id="grid" class="grid"></div>
+      <p id="empty" class="empty" hidden>No games match. Try a different search or category.</p>
+    </section>
+
+    <section id="player" hidden>
+      <div class="player-bar">
+        <button id="back" class="btn">Back to games</button>
+        <h2 id="player-title"></h2>
+        <button id="fullscreen" class="btn btn-main">Full screen</button>
+      </div>
+      <div id="frame" class="frame"></div>
+      <p id="player-desc" class="player-desc"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

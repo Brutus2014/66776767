@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  html,body{margin:0;height:100%;background:#1b2340;color:#fff;font-family:sans-serif;overflow:hidden;user-select:none}
+  #hud{position:absolute;top:10px;left:14px;font-size:20px;font-weight:700}
+  #t{position:absolute;border-radius:50%;background:#ffc93c;border:6px solid #e8473f;cursor:pointer}
+  #msg{position:absolute;inset:0;display:grid;place-items:center;text-align:center;background:#1b2340ee}
+  button{font:inherit;font-weight:700;padding:10px 22px;border:0;border-radius:10px;background:#ffc93c;cursor:pointer}
+</style></head><body>
+<div id="hud">Score: 0 &nbsp; Time: 30</div>
+<div id="t" hidden></div>
+<div id="msg"><div><h1>Target Tap</h1><button id="go">Start</button></div></div>
+<script>
+const t=document.getElementById("t"),hud=document.getElementById("hud"),msg=document.getElementById("msg");
+let score=0,time=30,timer;
+function place(){const s=40+Math.random()*40;t.style.width=t.style.height=s+"px";
+  t.style.left=Math.random()*(innerWidth-s)+"px";t.style.top=50+Math.random()*(innerHeight-s-50)+"px";}
+function draw(){hud.innerHTML="Score: "+score+" &nbsp; Time: "+time}
+t.onclick=()=>{score++;draw();place()};
+document.getElementById("go").onclick=()=>{score=0;time=30;draw();msg.hidden=true;t.hidden=false;place();
+  timer=setInterval(()=>{time--;draw();if(time<=0){clearInterval(timer);t.hidden=true;
+    msg.hidden=false;msg.querySelector("h1").textContent="Score: "+score;
+    document.getElementById("go").textContent="Play again"}},1000)};
+</script></body></html>
