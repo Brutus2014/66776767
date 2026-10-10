@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game Shelf</title>
+  <link rel="stylesheet" href="new.css">
+</head>
+<body>
+  <div class="strip">
+    <span class="brand">GAME SHELF</span>
+    <button id="fs" class="pill">Fullscreen</button>
+  </div>
+
+  <div id="home" class="stage">
+    <div id="bg" class="bg"></div>
+    <nav class="nav">
+      <span class="tab on">Games</span>
+      <span class="grow"></span>
+      <input id="search" type="search" placeholder="Search games" aria-label="Search games" hidden>
+      <button id="searchBtn" class="icon" aria-label="Search">&#128269;</button>
+      <span id="clock" class="clock"></span>
+    </nav>
+    <div id="row" class="row" tabindex="0"></div>
+    <div class="info">
+      <h1 id="title">Loading...</h1>
+      <p id="by"></p>
+      <div class="actions"><button id="play" class="play">Play</button></div>
+      <p id="count" class="count"></p>
+    </div>
+  </div>
+
+  <div id="player" class="player" hidden>
+    <div class="player-bar">
+      <button id="back" class="pill">Back</button>
+      <strong id="ptitle"></strong>
+      <button id="pfs" class="pill">Full screen</button>
+    </div>
+    <div id="frame" class="frame"></div>
+  </div>
+
+  <script src="new.js"></script>
+</body>
+</html>
