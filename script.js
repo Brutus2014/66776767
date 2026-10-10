@@ -140,6 +140,10 @@ state.games.forEach((game) => {
   $("back").addEventListener("click", showBrowse);
   $("logo").addEventListener("click", (e) => { e.preventDefault(); showBrowse(); });
   $("fullscreen").addEventListener("click", () => {
+    $("open-blank").addEventListener("click", () => {
+  const id = location.hash.slice(1);
+  openGameInBlank(id);
+});
     const f = $("frame").querySelector("iframe");
     if (f && f.requestFullscreen) f.requestFullscreen();
   });
