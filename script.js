@@ -181,7 +181,32 @@ function renderGrid() {
   });
   $("empty").hidden = list.length > 0;
 }
+function openGameInBlank(id) {
+  const game = state.games.find((g) => g.id === id);
+  if (!game) return;
 
+  const holder = document.createElement("div");
+  holder.innerHTML = game.iframe || "";
+  const original = holder.querySelector("iframe");
+  const src = original?.getAttribute("src");
+  if (!src) return;
+
+  const gameUrl = new URL(src, document.baseURI).href;
+  const tab = window.open("about:blank", "_blank");
+
+  if (!tab) {
+    alert("Your browser blocked the new tab. Allow pop-ups for this site and try again.");
+    return;
+  }
+
+  tab.document.title = game.title;
+  tab.document.body.style.cssText = "margin:0;overflow:hidden";
+  const frame = tab.document.createElement("iframe");
+  frame.src = gameUrl;
+  frame.style.cssText = "width:100vw;height:100vh;border:0";
+  frame.allow = "fullscreen; autoplay; gamepad";
+  tab.document.body.appendChild(frame);
+}
 async function openGame(id) {
   const g = state.games.find((x) => x.id === id);
   if (!g) return;
