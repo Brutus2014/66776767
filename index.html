@@ -7,28 +7,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="top">
-    <a class="logo" href="#" id="logo">Game Shelf</a>
-    <input id="search" type="search" placeholder="Search games" aria-label="Search games">
-  </header>
+  <div class="strip">
+    <span class="brand">GAME SHELF</span>
+    <button id="fs" class="pill">Fullscreen</button>
+  </div>
 
-  <main>
-    <section id="browse">
-      <div id="filters" class="filters" role="tablist" aria-label="Categories"></div>
-      <div id="grid" class="grid"></div>
-      <p id="empty" class="empty" hidden>No games match. Try a different search or category.</p>
-    </section>
+  <div id="home" class="stage">
+    <div id="bg" class="bg"></div>
 
-    <section id="player" hidden>
-      <div class="player-bar">
-        <button id="back" class="btn">Back to games</button>
-        <h2 id="player-title"></h2>
-        <button id="fullscreen" class="btn btn-main">Full screen</button> <button id="open-blank">Open in about:blank</button>
+    <nav class="nav">
+      <span class="tab on">Games</span>
+      <span class="grow"></span>
+      <input id="search" type="search" placeholder="Search games" aria-label="Search games" hidden>
+      <button id="searchBtn" class="icon" aria-label="Search">&#128269;</button>
+      <span id="clock" class="clock"></span>
+    </nav>
+
+    <div id="row" class="row" tabindex="0"></div>
+
+    <div class="info">
+      <h1 id="title">Loading...</h1>
+      <p id="by"></p>
+      <div class="actions">
+        <button id="play" class="play">Play</button>
       </div>
-      <div id="frame" class="frame"></div>
-      <p id="player-desc" class="player-desc"></p>
-    </section>
-  </main>
+      <p id="count" class="count"></p>
+    </div>
+  </div>
+
+  <div id="player" class="player" hidden>
+    <div class="player-bar">
+      <button id="back" class="pill">Back</button>
+      <strong id="ptitle"></strong>
+      <button id="pfs" class="pill">Full screen</button>
+    </div>
+    <div id="frame" class="frame"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
